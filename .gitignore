@@ -1,0 +1,7 @@
+_/*
+.DS_Store
+.env
+*.log
+*.map
+build/
+node_modules/
