@@ -22,7 +22,6 @@ module.exports = (env, options) => {
       publicPath: '/'
     },
     devServer: {
-      open: true,
       host: '0.0.0.0',
       port: 5000,
       historyApiFallback: true
@@ -74,12 +73,9 @@ module.exports = (env, options) => {
       new MiniCssExtractPlugin({
         filename: build ? '[name].[hash:8].css' : '[name].css'
       }),
-      // https://webpack.js.org/plugins/define-plugin/
-      // new DefinePlugin({
-      //   'process.env': {
-      //     NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      //   }
-      // }),
+      new DefinePlugin({
+        'process.env.SECRET': JSON.stringify(process.env.SECRET)
+      }),
       new HtmlWebpackPlugin({
         template: 'public/index.html',
         minify: {

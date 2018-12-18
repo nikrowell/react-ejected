@@ -6,6 +6,9 @@ window.debug = process.env.NODE_ENV === 'development' ? (obj, style = {}) => (
   <pre style={{maxWidth:'100%',overflow:'scroll', ...style}}>{JSON.stringify(obj, null, 2)}</pre>
 ) : fn => null;
 
+console.log(process.env.NODE_ENV);
+console.log(process.env.SECRET);
+
 function init() {
   const root = document.createElement('div');
   document.body.appendChild(root);
