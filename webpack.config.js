@@ -17,7 +17,7 @@ module.exports = (env, options) => {
       main: './src/index.js'
     },
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, './build'),
       filename: build ? '[name].[hash:8].js' : '[name].js',
       publicPath: '/'
     },
@@ -30,7 +30,7 @@ module.exports = (env, options) => {
     resolve: {
       modules: [
         'node_modules',
-        path.resolve(__dirname, 'src')
+        path.resolve(__dirname, './src')
       ]
     },
     module: {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from 'components/App';
+import '../scss/index.scss';
 
 window.debug = process.env.NODE_ENV === 'development' ? (obj, style = {}) => (
   <pre style={{maxWidth:'100%',overflow:'scroll', ...style}}>{JSON.stringify(obj, null, 2)}</pre>
