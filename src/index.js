@@ -1,11 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { noop } from './utils';
-import App from './components/App';
+import App from 'components/App';
 
 window.debug = process.env.NODE_ENV === 'development' ? (obj, style = {}) => (
   <pre style={{maxWidth:'100%',overflow:'scroll', ...style}}>{JSON.stringify(obj, null, 2)}</pre>
-) : noop;
+) : fn => null;
+
+console.log(process.env.NODE_ENV);
+console.log(process.env.SECRET);
 
 function init() {
   const root = document.createElement('div');
