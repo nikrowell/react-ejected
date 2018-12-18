@@ -23,6 +23,7 @@ class App extends React.Component {
         <h1>{this.state.message}</h1>
         <Button onClick={this.onClick}>Click Me</Button>
         {window.debug(this.state)}
+        <Button as="a" href="http://www.google.com/" target="_blank">google.com</Button>
       </div>
     );
   }
