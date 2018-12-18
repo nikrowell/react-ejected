@@ -7,7 +7,7 @@
     "url": "http://www.nikrowell.com/"
   },
   "scripts": {
-    "start": "npm run clean && webpack --mode development --watch",
+    "start": "npm run clean && webpack-dev-server --mode development",
     "build": "npm run clean && webpack --mode production",
     "clean": "rm -rf build/*"
   },
@@ -31,7 +31,8 @@
     "terser-webpack-plugin": "^1.1.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "_____ejected": {
     "@babel/core": "7.1.0",

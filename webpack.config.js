@@ -21,6 +21,12 @@ module.exports = (env, options) => {
       filename: build ? '[name].[hash:8].js' : '[name].js',
       publicPath: '/'
     },
+    devServer: {
+      open: true,
+      host: '0.0.0.0',
+      port: 5000,
+      historyApiFallback: true
+    },
     devtool: build ? false : 'source-map',
     resolve: {
       modules: [
