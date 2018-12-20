@@ -3,6 +3,7 @@ const sass = require('sass');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DefinePlugin = require('webpack').DefinePlugin;
 
@@ -70,6 +71,7 @@ module.exports = (env, options) => {
       }]
     },
     plugins: [
+      new ErrorOverlayPlugin(),
       new MiniCssExtractPlugin({
         filename: build ? '[name].[hash:8].css' : '[name].css'
       }),
