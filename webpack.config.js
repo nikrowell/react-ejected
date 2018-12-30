@@ -5,6 +5,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DefinePlugin = require('webpack').DefinePlugin;
 
 require('dotenv').config();
@@ -68,8 +69,6 @@ module.exports = (env, options) => {
         use: {
           loader: 'file-loader',
           options: {
-            // TODO: fix this with build so favicon.ico and manifest.json
-            // get copied from ./public/index.html without being renamed
             name: build ? '[path][name].[hash].[ext]' : '[path][name].[ext]'
           }
         }
@@ -83,6 +82,10 @@ module.exports = (env, options) => {
       new DefinePlugin({
         'process.env.SOME_KEY': JSON.stringify(process.env.SOME_KEY)
       }),
+      new CopyWebpackPlugin([{
+        from: 'public/',
+        ignore: ['index.html']
+      }]),
       new HtmlWebpackPlugin({
         template: 'public/index.html',
         minify: {
