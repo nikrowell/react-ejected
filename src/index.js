@@ -9,6 +9,7 @@ console.log(process.env.SOME_KEY);
 function init() {
   const root = document.createElement('div');
   document.body.appendChild(root);
+  document.querySelector('noscript').remove();
   render(<App />, root);
 }
 
