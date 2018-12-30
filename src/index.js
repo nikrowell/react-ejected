@@ -4,7 +4,7 @@ import App from 'components/App';
 import '../scss/index.scss';
 
 console.log(process.env.NODE_ENV);
-console.log(process.env.SECRET);
+console.log(process.env.SOME_KEY);
 
 function init() {
   const root = document.createElement('div');

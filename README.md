@@ -1,3 +1,7 @@
+## ejected-react-app
+
+A customized `create-react-app` boilerplate created as an opportunity to better understand webpack and
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

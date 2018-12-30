@@ -25,6 +25,7 @@ module.exports = (env, options) => {
     devServer: {
       host: '0.0.0.0',
       port: 5000,
+      open: true,
       historyApiFallback: true
     },
     devtool: build ? false : 'source-map',
@@ -76,7 +77,7 @@ module.exports = (env, options) => {
         filename: build ? '[name].[hash:8].css' : '[name].css'
       }),
       new DefinePlugin({
-        'process.env.SECRET': JSON.stringify(process.env.SECRET)
+        'process.env.SOME_KEY': JSON.stringify(process.env.SOME_KEY)
       }),
       new HtmlWebpackPlugin({
         template: 'public/index.html',
