@@ -10,4 +10,4 @@ Builds the app from `./public` to `./build` with minification and hashed filenam
 
 ### `npm test`
 
-Coming soon. Consider using [create-react-app](https://github.com/facebook/create-react-app) for larger applications or when testing is needed.
+Coming soon. Consider using [create-react-app](https://github.com/facebook/create-react-app) for larger applications or when testing is desired.

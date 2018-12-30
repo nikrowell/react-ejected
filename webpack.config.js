@@ -3,7 +3,7 @@ const sass = require('sass');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DefinePlugin = require('webpack').DefinePlugin;
 
@@ -18,21 +18,23 @@ module.exports = (env, options) => {
       main: './src/index.js'
     },
     output: {
-      path: path.resolve(__dirname, './build'),
-      filename: build ? '[name].[hash:8].js' : '[name].js',
+      path: path.resolve(__dirname, 'build'),
+      filename: build ? '[name].[hash].js' : '[name].js',
+      hashDigestLength: 8,
       publicPath: '/'
     },
     devServer: {
       host: '0.0.0.0',
       port: 5000,
       open: true,
+      contentBase: path.resolve(__dirname, 'public'),
       historyApiFallback: true
     },
     devtool: build ? false : 'source-map',
     resolve: {
       modules: [
         'node_modules',
-        path.resolve(__dirname, './src')
+        path.resolve(__dirname, 'src')
       ]
     },
     module: {
@@ -66,10 +68,9 @@ module.exports = (env, options) => {
         use: {
           loader: 'file-loader',
           options: {
-            // TODO: fix file-loader issues? favicon is 404-ing
-            // https://survivejs.com/webpack/loading/images/
-            // name: '[path]/[name].[hash:8].[ext]'
-            name: '[path][name].[ext]'
+            // TODO: fix this with build so favicon.ico and manifest.json
+            // get copied from ./public/index.html without being renamed
+            name: build ? '[path][name].[hash].[ext]' : '[path][name].[ext]'
           }
         }
       }]
@@ -77,7 +78,7 @@ module.exports = (env, options) => {
     plugins: [
       new ErrorOverlayPlugin(),
       new MiniCssExtractPlugin({
-        filename: build ? '[name].[hash:8].css' : '[name].css'
+        filename: build ? '[name].[hash].css' : '[name].css'
       }),
       new DefinePlugin({
         'process.env.SOME_KEY': JSON.stringify(process.env.SOME_KEY)
