@@ -66,6 +66,8 @@ module.exports = (env, options) => {
         use: {
           loader: 'file-loader',
           options: {
+            // TODO: fix file-loader issues? favicon is 404-ing
+            // https://survivejs.com/webpack/loading/images/
             // name: '[path]/[name].[hash:8].[ext]'
             name: '[path][name].[ext]'
           }
