@@ -30,6 +30,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <h1>{greeting} React</h1>
+        <img src="/images/sample.jpg" alt="Mountains" />
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <input type="text" name="greeting" value={greeting} onChange={this.onChange} />
         {window.debug(this.state)}
