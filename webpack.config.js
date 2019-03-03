@@ -32,12 +32,6 @@ module.exports = (env, options) => {
       historyApiFallback: true
     },
     devtool: build ? false : 'source-map',
-    resolve: {
-      modules: [
-        'node_modules',
-        path.resolve(__dirname, 'src')
-      ]
-    },
     module: {
       rules: [{
         test: /\.js$/,
