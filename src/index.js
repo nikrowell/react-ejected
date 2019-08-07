@@ -17,7 +17,7 @@ window.debug = process.env.NODE_ENV === 'development' ? (vars, styles = {}) => (
   <pre style={{maxWidth:'100%',overflow:'scroll', ...styles}}>{JSON.stringify(vars, null, 2)}</pre>
 ) : vars => null;
 
-// https://polyfill.io/v2/docs/features/
+// https://polyfill.io/v3/url-builder/
 const features = [];
 // ('fetch' in window) || features.push('fetch');
 // ('Promise' in window) || features.push('Promise');
@@ -26,9 +26,9 @@ const features = [];
 // ('find' in Array.prototype) || features.push('Array.prototype.find');
 // ('includes' in Array.prototype) || features.push('Array.prototype.includes');
 
-if(features.length) {
+if (polyfills.length) {
   const script = document.createElement('script');
-  script.src = `//cdn.polyfill.io/v2/polyfill.min.js?features=${features.join(',')}&flags=gated,always&ua=${window.navigator.userAgent}`;
+  script.src = `//polyfill.io/v3/polyfill.min.js?features=${features.join(',')}&flags=gated&ua=${window.navigator.userAgent}`;
   script.onload = init;
   document.body.appendChild(script);
 } else { init() }
