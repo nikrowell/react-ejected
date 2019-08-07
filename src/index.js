@@ -26,7 +26,7 @@ const features = [];
 // ('find' in Array.prototype) || features.push('Array.prototype.find');
 // ('includes' in Array.prototype) || features.push('Array.prototype.includes');
 
-if (polyfills.length) {
+if (features.length) {
   const script = document.createElement('script');
   script.src = `//polyfill.io/v3/polyfill.min.js?features=${features.join(',')}&flags=gated&ua=${window.navigator.userAgent}`;
   script.onload = init;
