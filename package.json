@@ -17,23 +17,23 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
-    "@babel/preset-react": "*",
-    "babel-loader": "*",
-    "copy-webpack-plugin": "*",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
     "dotenv": "^8.0.0",
     "error-overlay-webpack-plugin": "^0.4.0",
     "file-loader": "^4.1.0",
-    "html-webpack-plugin": "*",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
-    "optimize-css-assets-webpack-plugin": "*",
-    "sass": "*",
-    "sass-loader": "*",
-    "terser-webpack-plugin": "*",
-    "webpack": "*",
-    "webpack-cli": "*",
-    "webpack-dev-server": "*"
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass": "^1.22.9",
+    "sass-loader": "^7.1.0",
+    "terser-webpack-plugin": "^1.4.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   }
 }
